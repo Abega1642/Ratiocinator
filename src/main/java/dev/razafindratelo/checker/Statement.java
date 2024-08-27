@@ -43,6 +43,8 @@ public class Statement {
                 } else if (this.value == TruthValue.FALSE || statement.getValue() == TruthValue.FALSE) {
                     return new Statement("result", TruthValue.FALSE);
                 }
+            } else if (this.value == TruthValue.TRUE || statement.getValue() == TruthValue.TRUE) {
+                return new Statement("result", TruthValue.TRUE);
             } else {
                 return new Statement("result", TruthValue.UNKNOWN);
             }
