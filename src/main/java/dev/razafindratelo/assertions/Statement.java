@@ -1,6 +1,5 @@
-package dev.razafindratelo.checker;
+package dev.razafindratelo.assertions;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 

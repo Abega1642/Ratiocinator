@@ -1,4 +1,4 @@
-package dev.razafindratelo.checker;
+package dev.razafindratelo.assertions;
 
 public enum TruthValue {
     TRUE,

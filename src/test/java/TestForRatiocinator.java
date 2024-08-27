@@ -1,7 +1,7 @@
-import dev.razafindratelo.checker.FalseTautology;
-import dev.razafindratelo.checker.Statement;
-import dev.razafindratelo.checker.TrueTautology;
-import dev.razafindratelo.checker.TruthValue;
+import dev.razafindratelo.assertions.FalseTautology;
+import dev.razafindratelo.assertions.Statement;
+import dev.razafindratelo.assertions.TrueTautology;
+import dev.razafindratelo.assertions.TruthValue;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
