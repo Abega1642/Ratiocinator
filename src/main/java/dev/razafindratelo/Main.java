@@ -27,6 +27,10 @@ public class Main {
 
         System.out.println("Math is good so math is bad or Lou is rich :" + truth_1.then(false_1).or(state_2).getValue());
 
+        var lou_is_generous = new Statement("Lou is generous");
+        var lou_is_poor = new FalseTautology("Lou is poor");
+
+        System.out.println("Lou is poor or generous :" + lou_is_poor.or(lou_is_generous).apply());
 
     }
 }

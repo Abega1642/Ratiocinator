@@ -55,6 +55,14 @@ public class TestForRatiocinator {
         var lou_is_poor = new FalseTautology("Lou is poor");
 
 
-        Assertions.assertEquals(TruthValue.UNKNOWN, lou_is_handsome.or(lou_is_generous).apply());
+        Assertions.assertEquals(TruthValue.FALSE, lou_is_handsome.or(lou_is_generous).then(lou_is_poor).apply());
+    }
+
+    @Test
+    void lou_is_poor_OR_lou_is_generous() {
+        var lou_is_generous = new Statement("Lou is generous");
+        var lou_is_poor = new FalseTautology("Lou is poor");
+
+        Assertions.assertEquals(TruthValue.UNKNOWN, lou_is_poor.or(lou_is_generous).apply());
     }
 }
