@@ -22,13 +22,12 @@ public class Statement {
 
     public Statement and(Statement statement) {
         if (this.statement != null) {
-            if (this.value != statement.getValue()) {
-                if (this.value == TruthValue.TRUE && statement.getValue() == TruthValue.FALSE
-                    || this.value == TruthValue.FALSE && statement.getValue() == TruthValue.TRUE) {
-                    return new Statement("result", TruthValue.FALSE);
-                } else {
-                    return new Statement("result", TruthValue.UNKNOWN);
-                }
+            if (this.value.equals(TruthValue.TRUE) && statement.getValue().equals(TruthValue.TRUE)) {
+                return new Statement("result", TruthValue.TRUE);
+            } else if (this.value.equals(TruthValue.FALSE) || statement.getValue().equals(TruthValue.FALSE)) {
+                return new Statement("result", TruthValue.FALSE);
+            } else {
+                return new Statement("result", TruthValue.UNKNOWN);
             }
         }
         return null;
@@ -54,6 +53,7 @@ public class Statement {
     public Statement then(Statement statement) {
         if (this.statement != null) {
             if (this.value != TruthValue.UNKNOWN && statement.getValue() != TruthValue.UNKNOWN) {
+
                 if (this.value == TruthValue.TRUE && statement.getValue() == TruthValue.FALSE) {
                     return new Statement("result", TruthValue.FALSE);
                 } else if (this.value == TruthValue.FALSE && statement.getValue() == TruthValue.FALSE){
@@ -61,6 +61,7 @@ public class Statement {
                 } else {
                     return new Statement("result", TruthValue.TRUE);
                 }
+
             } else {
                 return new Statement("result", TruthValue.UNKNOWN);
             }
